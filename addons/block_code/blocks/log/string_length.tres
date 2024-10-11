@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://jycj0vkfxq2i"]
+
+[ext_resource type="Script" path="res://addons/block_code/code_generation/block_definition.gd" id="1_qskr1"]
+
+[resource]
+script = ExtResource("1_qskr1")
+name = &"string_length"
+target_node_class = ""
+description = "Gives the length of a [i]String[/i]"
+category = "Log"
+type = 3
+variant_type = 2
+display_template = "length of {string: STRING}"
+code_template = "{string}.length()"
+defaults = {
+"string": ""
+}
+signal_name = ""
+scope = ""

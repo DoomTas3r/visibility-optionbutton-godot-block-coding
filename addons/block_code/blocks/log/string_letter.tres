@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bhandm6a0v434"]
+
+[ext_resource type="Script" path="res://addons/block_code/code_generation/block_definition.gd" id="1_6yrvb"]
+
+[resource]
+script = ExtResource("1_6yrvb")
+name = &"string_letter"
+target_node_class = ""
+description = "Gives the letter at the number of a [i]String[/i]"
+category = "Log"
+type = 3
+variant_type = 2
+display_template = "letter {number: INT} of {string: STRING}"
+code_template = "{string}[{number} - 1]"
+defaults = {
+"number": 1,
+"string": ""
+}
+signal_name = ""
+scope = ""
