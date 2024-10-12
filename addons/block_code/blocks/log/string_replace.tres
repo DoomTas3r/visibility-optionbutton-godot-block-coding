@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://mpsfdc4y2t82"]
+
+[ext_resource type="Script" path="res://addons/block_code/code_generation/block_definition.gd" id="1_71dhg"]
+
+[resource]
+script = ExtResource("1_71dhg")
+name = &"string_replace"
+target_node_class = ""
+description = "Gives [i]text[/i] but with every occurence of [i]find[/i] replaced by [i]replace[/i]"
+category = "Log"
+type = 3
+variant_type = 2
+display_template = "replace {find: STRING} with {replace: STRING} in {text: STRING}"
+code_template = "{text}.replace({find}, {replace})"
+defaults = {
+"find": "",
+"replace": "",
+"text": ""
+}
+signal_name = ""
+scope = ""
