@@ -21,7 +21,7 @@ func _ready():
 		_panel.texture = texture
 		_panel.modulate = category.color
 
-	_label.text = category.name
+	_label.text = category.name.get_slice("| ", 1)
 
 
 func _on_button_pressed():
