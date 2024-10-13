@@ -1,7 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdtetj0gs45hv"]
+[gd_scene load_steps=8 format=3 uid="uid://bdtetj0gs45hv"]
 
 [ext_resource type="Script" path="res://addons/block_code/ui/picker/categories/block_category_button.gd" id="1_pxxnl"]
 [ext_resource type="Texture2D" uid="uid://cn4ub7dwl4ae5" path="res://addons/block_code/ui/picker/categories/category_icons/block_code_node.svg" id="2_s8lmp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0e7p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgecf"]
 
@@ -30,7 +37,19 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Panel" type="TextureRect" parent="HBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w0e7p")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_s8lmp")
@@ -43,6 +62,7 @@ text = "Example"
 [node name="Button" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Example"
 mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dgecf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fyk0j")
