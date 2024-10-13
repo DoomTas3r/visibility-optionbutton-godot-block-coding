@@ -7,10 +7,10 @@ const Util = preload("res://addons/block_code/ui/util.gd")
 signal selected
 
 var category: BlockCategory
-#var gui = EditorInterface.get_base_control()
 
 @onready var _panel := %Panel
 @onready var _label := %Label
+@onready var _button := %Button
 
 
 func _ready():
@@ -18,11 +18,12 @@ func _ready():
 		category = BlockCategory.new("Example", Color.RED)
 
 	if not Util.node_is_part_of_edited_scene(self):
-		var texture = load("res://addons/block_code/ui/picker/categories/category_icons/" + category.icon + ".svg")#Texture2D.new()
-		_panel.texture = texture#gui.get_theme_icon(category.icon, "EditorIcons")
+		var texture = load("res://addons/block_code/ui/picker/categories/category_icons/" + category.icon + ".svg")
+		_panel.texture = texture
 		_panel.modulate = category.color
 
-	_label.text = category.name
+	_label.text = category.name.get_slice("| ", 1)
+	_button.tooltip_text = category.name.get_slice(" |", 0)
 
 
 func _on_button_pressed():
