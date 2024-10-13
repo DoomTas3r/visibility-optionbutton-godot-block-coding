@@ -41,6 +41,7 @@ layout_mode = 2
 text = "Example"
 
 [node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dgecf")
