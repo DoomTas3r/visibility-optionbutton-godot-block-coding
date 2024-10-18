@@ -9,9 +9,7 @@ signal selected
 var category: BlockCategory
 
 @onready var _panel := %Panel
-@onready var _icon := %Icon
 @onready var _label := %Label
-@onready var _button := %Button
 
 
 func _ready():
@@ -19,12 +17,11 @@ func _ready():
 		category = BlockCategory.new("Example", Color.RED)
 
 	if not Util.node_is_part_of_edited_scene(self):
-		var texture = load("res://addons/block_code/ui/picker/categories/category_icons/" + category.icon + ".svg")
-		_icon.texture = texture
-		_panel.modulate = category.color
+		var new_stylebox: StyleBoxFlat = _panel.get_theme_stylebox("panel").duplicate()
+		new_stylebox.bg_color = category.color
+		_panel.add_theme_stylebox_override("panel", new_stylebox)
 
-	_label.text = category.name.get_slice("| ", 1)
-	_button.tooltip_text = category.name.get_slice(" |", 0)
+	_label.text = category.name
 
 
 func _on_button_pressed():
