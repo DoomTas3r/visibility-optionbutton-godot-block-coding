@@ -24,7 +24,6 @@ mouse_filter = 2
 
 [node name="Window" type="Control" parent="WindowContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 anchors_preset = 0
 offset_right = 1152.0
@@ -108,13 +107,14 @@ horizontal_alignment = 1
 
 [node name="SelectedNodeBox" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="SelectedNodeBox"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "Use block coding to create custom behavior and game mechanics for \"ZoomInButton\"."
+text = "Use block coding to create custom behavior and game mechanics for \"{node}\"."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -152,7 +152,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"InspectorActionButton"
-disabled = true
 text = "Open in Editor"
 
 [node name="ReplaceBlockCodeButton" type="Button" parent="SelectedNodeWithBlockCodeBox/ButtonsBox"]
@@ -160,13 +159,12 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"InspectorActionButton"
-disabled = true
 text = "Override Block Code"
 icon = ExtResource("2_710vn")
 
-[connection signal="pressed" from="WindowContainer/Overlay/MarginContainer/ZoomButtons/ZoomOutButton" to="." method="_on_zoom_button_pressed"]
+[connection signal="pressed" from="WindowContainer/Overlay/MarginContainer/ZoomButtons/ZoomOutButton" to="." method="_on_zoom_out_button_pressed"]
 [connection signal="pressed" from="WindowContainer/Overlay/MarginContainer/ZoomButtons/ZoomButton" to="." method="_on_zoom_button_pressed"]
-[connection signal="pressed" from="WindowContainer/Overlay/MarginContainer/ZoomButtons/ZoomInButton" to="." method="_on_zoom_button_pressed"]
+[connection signal="pressed" from="WindowContainer/Overlay/MarginContainer/ZoomButtons/ZoomInButton" to="." method="_on_zoom_in_button_pressed"]
 [connection signal="pressed" from="SelectedNodeBox/ButtonsBox/AddBlockCodeButton" to="." method="_on_add_block_code_button_pressed"]
 [connection signal="pressed" from="SelectedNodeWithBlockCodeBox/ButtonsBox/OpenSceneButton" to="." method="_on_open_scene_button_pressed"]
 [connection signal="pressed" from="SelectedNodeWithBlockCodeBox/ButtonsBox/ReplaceBlockCodeButton" to="." method="_on_replace_block_code_button_pressed"]
